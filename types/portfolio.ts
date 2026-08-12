@@ -1,4 +1,9 @@
-export const EXPERIENCE_TYPES = ["professional", "personal", "training"] as const;
+export const EXPERIENCE_TYPES = [
+  "professional",
+  "personal",
+  "training",
+  "unverified",
+] as const;
 export type ExperienceType = (typeof EXPERIENCE_TYPES)[number];
 
 export const EXPERIENCE_RESPONSIBILITY_CATEGORIES = [
@@ -43,7 +48,7 @@ export interface ProfessionalExperience {
   company?: string;
   startDate?: string;
   endDate?: string;
-  isCurrent: boolean;
+  isCurrent?: boolean;
   responsibilities: ExperienceResponsibility[];
 }
 
