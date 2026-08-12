@@ -1,0 +1,2 @@
+ChatGPT GitHub write capability verification.
+This file is a temporary infrastructure test and must be removed after successful verification.
