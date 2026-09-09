@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import "./header-static.css";
 
 export const metadata: Metadata = {
   title: "Sheik Jamsheer — Software Developer & AI Engineer",
