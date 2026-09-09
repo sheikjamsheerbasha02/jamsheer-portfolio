@@ -48,7 +48,7 @@ export default function Home() {
     <main className={styles.enhancements}>
       <header className="site-header">
         <a className="brand" href="#top" aria-label="Sheik Jamsheer home"><span className="brand-mark">S</span><span>Sheik Jamsheer</span></a>
-        <nav className="desktop-nav" aria-label="Primary navigation"><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#approach">Approach</a><a href="#contact">Contact</a></nav>
+        <nav className="desktop-nav" aria-label="Primary navigation"><a href="#about">About</a><a href="#skills">Skills</a><a href="#work">Work</a><a href="#approach">Approach</a><a href="#credentials">Credentials</a><a href="#contact">Contact</a></nav>
         <a className="header-cta" href="#contact">Let&apos;s talk <span>↗</span></a>
       </header>
 
@@ -66,7 +66,7 @@ export default function Home() {
 
       <section className="section-shell content-section credentials-section" id="credentials"><div className="credentials-grid"><div className="section-heading compact"><p className="section-kicker">06 / CREDENTIALS</p><h2>Proof through<br /><em>practice.</em></h2></div><div className="credential-note"><p>This portfolio prioritizes shipped work, engineering decisions, and continuous learning over a long list of buzzwords.</p><a className="text-link" href="https://www.linkedin.com/in/sheik-jamsheer-basha/" target="_blank" rel="noreferrer">View LinkedIn <span>↗</span></a></div></div><div className="credential-strip"><div><span>01</span><strong>Software Engineering</strong><small>Product development · architecture · delivery</small></div><div><span>02</span><strong>Applied AI</strong><small>LLMs · local inference · intelligent interfaces</small></div><div><span>03</span><strong>Continuous Learning</strong><small>Certifications · experimentation · open source</small></div></div></section>
 
-      <section className="contact-section" id="contact"><div className="section-shell contact-inner"><p className="section-kicker">07 / CONTACT</p><h2>Have an idea?<br /><em>Let&apos;s build it.</em></h2><p>For software, AI, product engineering, or a technical conversation.</p><div className="contact-actions"><a className="contact-link" href="mailto:hello@jamsheer.dev">Start a conversation <span>↗</span></a><a className="contact-link muted-link" href="https://www.linkedin.com/in/sheik-jamsheer-basha/" target="_blank" rel="noreferrer">LinkedIn <span>↗</span></a></div></div></section>
+      <section className="contact-section" id="contact"><div className="section-shell contact-inner"><p className="section-kicker">07 / CONTACT</p><h2>Have an idea?<br /><em>Let&apos;s build it.</em></h2><p>For software, AI, product engineering, or a technical conversation.</p><div className="contact-actions"><a className="contact-link" href="https://www.linkedin.com/in/sheik-jamsheer-basha/" target="_blank" rel="noreferrer">Start a conversation <span>↗</span></a><a className="contact-link muted-link" href="https://github.com/sheikjamsheerbasha02" target="_blank" rel="noreferrer">GitHub <span>↗</span></a></div></div></section>
 
       <footer className="site-footer section-shell"><span>© 2026 Sheik Jamsheer</span><div><a href="https://github.com/sheikjamsheerbasha02" target="_blank" rel="noreferrer">GitHub</a><a href="https://www.linkedin.com/in/sheik-jamsheer-basha/" target="_blank" rel="noreferrer">LinkedIn</a><a href="#top">Back to top ↑</a></div></footer>
     </main>
