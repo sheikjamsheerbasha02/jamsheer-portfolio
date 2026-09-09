@@ -8,12 +8,13 @@ test("application is reachable", async ({ page }) => {
 test("portfolio primary sections are present", async ({ page }) => {
   await page.goto("/");
 
-  await expect(page.getByRole("link", { name: "About" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Skills" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Work" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Approach" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Credentials" })).toBeVisible();
-  await expect(page.getByRole("link", { name: "Contact" })).toBeVisible();
+  const navigation = page.getByRole("navigation", { name: "Primary navigation" });
+  await expect(navigation.getByRole("link", { name: "About", exact: true })).toBeVisible();
+  await expect(navigation.getByRole("link", { name: "Skills", exact: true })).toBeVisible();
+  await expect(navigation.getByRole("link", { name: "Work", exact: true })).toBeVisible();
+  await expect(navigation.getByRole("link", { name: "Approach", exact: true })).toBeVisible();
+  await expect(navigation.getByRole("link", { name: "Credentials", exact: true })).toBeVisible();
+  await expect(navigation.getByRole("link", { name: "Contact", exact: true })).toBeVisible();
 
   await expect(page.getByRole("heading", { name: "FAHIM" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "AIRA" })).toBeVisible();
