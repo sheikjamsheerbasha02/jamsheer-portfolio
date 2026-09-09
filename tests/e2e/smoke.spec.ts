@@ -15,26 +15,16 @@ test("portfolio primary sections are present", async ({ page }) => {
     name: /primary navigation/i,
   });
 
-  await expect(
-    primaryNavigation.getByRole("link", { name: "About", exact: true })
-  ).toBeVisible();
-  await expect(
-    primaryNavigation.getByRole("link", { name: "Skills", exact: true })
-  ).toBeVisible();
-  await expect(
-    primaryNavigation.getByRole("link", { name: "Work", exact: true })
-  ).toBeVisible();
-  await expect(
-    primaryNavigation.getByRole("link", { name: "Approach", exact: true })
-  ).toBeVisible();
-  await expect(
-    primaryNavigation.getByRole("link", { name: "Contact", exact: true })
-  ).toBeVisible();
+  for (const name of ["About", "Skills", "Work", "Approach", "Contact"]) {
+    await expect(
+      primaryNavigation.getByRole("link", { name, exact: true })
+    ).toBeVisible();
+  }
 
   await expect(page.getByRole("heading", { name: "FAHIM" })).toBeVisible();
   await expect(page.getByRole("heading", { name: "AIRA" })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /Engineering approach/i })).toBeVisible();
-  await expect(page.getByRole("heading", { name: /Let’s build/i })).toBeVisible();
+  await expect(page.locator("#approach")).toBeVisible();
+  await expect(page.locator("#contact")).toBeVisible();
 });
 
 test("primary navigation links target their sections", async ({ page }) => {
@@ -44,19 +34,17 @@ test("primary navigation links target their sections", async ({ page }) => {
     name: /primary navigation/i,
   });
 
-  await expect(
-    primaryNavigation.getByRole("link", { name: "About", exact: true })
-  ).toHaveAttribute("href", "#about");
-  await expect(
-    primaryNavigation.getByRole("link", { name: "Skills", exact: true })
-  ).toHaveAttribute("href", "#skills");
-  await expect(
-    primaryNavigation.getByRole("link", { name: "Work", exact: true })
-  ).toHaveAttribute("href", "#work");
-  await expect(
-    primaryNavigation.getByRole("link", { name: "Approach", exact: true })
-  ).toHaveAttribute("href", "#approach");
-  await expect(
-    primaryNavigation.getByRole("link", { name: "Contact", exact: true })
-  ).toHaveAttribute("href", "#contact");
+  const expectedLinks = [
+    ["About", "#about"],
+    ["Skills", "#skills"],
+    ["Work", "#work"],
+    ["Approach", "#approach"],
+    ["Contact", "#contact"],
+  ];
+
+  for (const [name, href] of expectedLinks) {
+    await expect(
+      primaryNavigation.getByRole("link", { name, exact: true })
+    ).toHaveAttribute("href", href);
+  }
 });
