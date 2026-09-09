@@ -1,0 +1,16 @@
+/* Static top navigation: no motion, transform animation, or hover transition. */
+.site-header,
+.site-header * {
+  animation: none !important;
+  transition: none !important;
+}
+
+.site-header {
+  transform: translateX(-50%) !important;
+  will-change: auto !important;
+}
+
+.site-header .desktop-nav a:hover,
+.site-header .desktop-nav a.active {
+  transform: none !important;
+}
