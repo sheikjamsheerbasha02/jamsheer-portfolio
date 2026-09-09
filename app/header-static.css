@@ -1,4 +1,4 @@
-/* Static top navigation: no motion, transform animation, or hover transition. */
+/* Static top navigation: no motion and no sticky/fixed scrolling. */
 .site-header,
 .site-header * {
   animation: none !important;
@@ -6,6 +6,9 @@
 }
 
 .site-header {
+  position: absolute !important;
+  top: 7px !important;
+  left: 50% !important;
   transform: translateX(-50%) !important;
   will-change: auto !important;
 }
