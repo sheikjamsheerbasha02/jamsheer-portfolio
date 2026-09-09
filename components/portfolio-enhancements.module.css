@@ -12,13 +12,99 @@
 .enhancements :global(.credential-strip small) { display: block; margin-top: 8px; color: var(--muted); font-size: 11px; line-height: 1.5; }
 .enhancements :global(.contact-actions) { display: flex; gap: 28px; align-items: center; margin-top: 38px; }
 .enhancements :global(.muted-link) { color: #777a82; border-bottom-color: #b8bac0; }
+
+/* V3 depth pass: give the template's existing CSS illustrations stronger spatial hierarchy. */
+.enhancements :global(.hero-3d),
+.enhancements :global(.globe-scene),
+.enhancements :global(.journey-3d),
+.enhancements :global(.workspace-3d) { transform-style: preserve-3d; }
+
+.enhancements :global(.hero-3d)::after {
+  content: "";
+  position: absolute;
+  left: 16%; right: 12%; bottom: 7%; height: 18px;
+  border-radius: 50%;
+  background: rgba(32, 61, 118, .12);
+  filter: blur(14px);
+  transform: translateZ(-40px) rotateX(68deg);
+  pointer-events: none;
+}
+
+.enhancements :global(.developer-figure) { transform: translate3d(-50%, -50%, 35px) rotateY(-10deg); }
+.enhancements :global(.figure-head) { transform: translateZ(18px); }
+.enhancements :global(.figure-body) { transform: translateZ(4px); }
+.enhancements :global(.laptop) { transform: translate3d(-50%, -50%, 55px) rotateX(8deg) rotateY(-8deg); }
+.enhancements :global(.hero-card) { transform-style: preserve-3d; }
+.enhancements :global(.hero-card-ai) { transform: translateZ(70px) rotateY(-8deg) rotateZ(4deg); }
+.enhancements :global(.hero-card-system) { transform: translateZ(50px) rotateY(7deg) rotateZ(-5deg); }
+
+.enhancements :global(.skill-card) { perspective: 700px; transform-style: preserve-3d; }
+.enhancements :global(.skill-icon) {
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform .3s cubic-bezier(.2,.75,.2,1), box-shadow .3s ease;
+}
+.enhancements :global(.skill-icon)::before,
+.enhancements :global(.skill-icon)::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  pointer-events: none;
+}
+.enhancements :global(.skill-icon)::before {
+  transform: translateZ(-8px) translate(5px, 6px);
+  background: #d4e1fb;
+  opacity: .8;
+}
+.enhancements :global(.skill-icon)::after {
+  transform: translateZ(-14px) translate(9px, 10px);
+  background: #e6edfa;
+  opacity: .65;
+}
+.enhancements :global(.skill-card:hover) :global(.skill-icon) {
+  transform: rotateX(12deg) rotateY(-12deg) translateZ(18px) translateY(-3px);
+}
+
+.enhancements :global(.template-project-card) { perspective: 1100px; }
+.enhancements :global(.project-visual-3d) { transform-style: preserve-3d; }
+.enhancements :global(.project-console) {
+  transform: translateZ(34px) rotateX(7deg) rotateY(-7deg);
+  transition: transform .45s cubic-bezier(.2,.75,.2,1), box-shadow .45s ease;
+}
+.enhancements :global(.template-project-card:hover) :global(.project-console) {
+  transform: translateZ(60px) rotateX(3deg) rotateY(-3deg) translateY(-7px);
+}
+.enhancements :global(.floating-badge) { transform-style: preserve-3d; }
+.enhancements :global(.badge-one) { transform: translateZ(75px) rotate(-4deg); }
+.enhancements :global(.badge-two) { transform: translateZ(55px) rotate(5deg); }
+
+.enhancements :global(.journey-road) { transform-style: preserve-3d; }
+.enhancements :global(.journey-road span) { transform: translateZ(16px); }
+.enhancements :global(.flag) { transform: translateZ(45px) rotateY(-8deg); }
+
+.enhancements :global(.workspace-screen) {
+  transform: translateZ(55px) rotateY(-6deg) rotateX(3deg);
+  transition: transform .45s cubic-bezier(.2,.75,.2,1);
+}
+.enhancements :global(.workspace-3d:hover) :global(.workspace-screen) {
+  transform: translateZ(75px) rotateY(-3deg) rotateX(1deg) translateY(-5px);
+}
+.enhancements :global(.workspace-desk) { transform: translateZ(15px); }
+.enhancements :global(.workspace-chair) { transform: translateZ(28px); }
+.enhancements :global(.workspace-plant) { transform: translateZ(40px); }
+
 @media (max-width: 900px) {
   .enhancements :global(.credentials-grid) { grid-template-columns: 1fr; gap: 55px; }
+  .enhancements :global(.hero-card-ai) { transform: translateZ(40px) rotateZ(4deg); }
+  .enhancements :global(.hero-card-system) { transform: translateZ(30px) rotateZ(-5deg); }
 }
+
 @media (max-width: 680px) {
   .enhancements :global(.experience-band) { padding: 95px 0; }
   .enhancements :global(.credential-strip) { grid-template-columns: 1fr; margin-top: 55px; }
   .enhancements :global(.credential-strip > div + div) { border-left: 0; }
   .enhancements :global(.credential-strip > div) { min-height: 150px; }
   .enhancements :global(.contact-actions) { align-items: flex-start; flex-direction: column; gap: 22px; }
+  .enhancements :global(.hero-3d)::after { left: 20%; right: 18%; }
 }

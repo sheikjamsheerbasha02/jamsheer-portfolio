@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, redesign/portfolio-v2]
+    branches: [main]
   pull_request:
     branches: [main]
 
@@ -17,7 +17,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: 20
+          node-version: 22
           cache: npm
 
       - name: Install dependencies
